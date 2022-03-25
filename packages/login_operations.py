@@ -97,6 +97,8 @@ def delete(id):
         indx, data = get_project(id, title)
         if indx!=-1:
             remove(indx, id)
+            return options(menu(), id)
+
         else:
             x = input(
                 "project doesn't exist press c to try again or any key to  back to menu ")
@@ -116,6 +118,7 @@ def search(id):
         indx, data = get_project(id, title)
         if indx!=-1:
             print(json.dumps(data[indx], sort_keys=False, indent=4))
+            return options(menu(), id)
         else:
             x = input(
                 "project doesn't exist press c to try again or any key to  menu ")
